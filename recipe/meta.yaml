@@ -10,7 +10,7 @@ source:
   sha256: 6c867201d0414ff3011a9eb7f93e098d67b81cff8e7c05efdf506d5362a0eb81
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
@@ -38,6 +38,7 @@ test:
     - anndata
   commands:
     - pip check
+    - python -c "import anndata; print(anndata.__version__)"
   requires:
     - pip
 
